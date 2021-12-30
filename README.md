@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="media/stitching_constraint.png" alt="stitching-constraint" width="750px"/>
+  <img src="media/stitching_constraint.png" alt="stitching-constraint" width="500px"/>
 </p>
 
 ## Contents
