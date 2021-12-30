@@ -14,4 +14,4 @@
 
 ## Contents
 
- - [The Brachistochrone problem](https://nbviewer.jupyter.org/github/abhinavkamath/Space-Robot/blob/master/Astrobee_Euler.ipynb?flush_cache=true)
+ - [The Brachistochrone problem](https://nbviewer.org/github/abhikamath/scp-experiments/blob/main/brachistochrone/ptr_scp.ipynb?flush_cache=true)
