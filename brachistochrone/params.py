@@ -20,10 +20,10 @@ N = 25
 
 # SCP parameters
 max_iters = 25 # maximum SCP iterations
-w_tf = 1e1 # final-time weight
-w_vc1 = 1e2 # virtual control weight 1
-w_vc2 = 1e2 # virtual control weight 2
-w_tr = 1e2 # trust region weight
+w_tf = 1e0 # final-time weight
+w_vc1 = 1e1 # virtual buffer weight 1
+w_vc2 = 0 # 1e0 # virtual buffer weight 2
+w_tr = 1e0 # trust region weight
 
 ###############
 ### Scaling ###
