@@ -16,13 +16,12 @@ e1 = np.c_[np.array([1, 0])]
 e2 = np.c_[np.array([0, 1])]
 
 # Number of temporal nodes
-N = 25
+N = 100
 
 # SCP parameters
 max_iters = 25 # maximum SCP iterations
 w_tf = 1e0 # final-time weight
-w_vc1 = 1e1 # virtual buffer weight 1
-w_vc2 = 0 # 1e0 # virtual buffer weight 2
+w_vb = 1e1 # virtual buffer weight
 w_tr = 1e0 # trust region weight
 
 ###############
@@ -32,11 +31,11 @@ w_tr = 1e0 # trust region weight
 # Linear scaling
 
 # u
-u_guess = la.norm(g) # ((2/N**2)*(rf-r0-v0*N))-g
+u_guess = la.norm(g)
 au = np.diag([u_guess, u_guess])
 
 # r
-r_guess = la.norm(rf) # *np.sqrt(2)
+r_guess = la.norm(rf)
 ar = np.diag([r_guess, r_guess])
 
 # v
