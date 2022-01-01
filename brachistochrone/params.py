@@ -16,7 +16,7 @@ e1 = np.c_[np.array([1, 0])]
 e2 = np.c_[np.array([0, 1])]
 
 # Number of temporal nodes
-N = 100
+N = 50
 
 # SCP parameters
 max_iters = 25 # maximum SCP iterations
