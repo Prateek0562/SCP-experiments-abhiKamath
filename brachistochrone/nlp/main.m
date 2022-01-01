@@ -28,7 +28,7 @@ figure
 plot(zz(1,:),zz(2,:),'-b');
 hold on
 plot(z(1,:),z(2,:),'om');
-plot(x_true(C,T*tau_fine),y_true(C,T*tau_fine),'-r')
+plot(x_true(C,phiT*tau_fine),y_true(C,phiT*tau_fine),'-r')
 aX = gca;
 aX.YDir = 'reverse';
 legend('fmicon single shoot','truth');

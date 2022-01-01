@@ -1,0 +1,13 @@
+Collection of Optimal Control Problems
+see 1.4
+source: http://tsakalis.faculty.asu.edu/coursea/Collection%20of%20Optimal%20Control%20Problems.pdf
+
+ECE1655
+see p. 58
+source: http://www.scg.utoronto.ca/~francis/ECE1655.pdf
+
+The Brachistochrone Problem and Modern Control Theory
+see p. 13 and 15
+source: https://www.researchgate.net/profile/Mohamed_Mourad_Lafifi/post/Is-this-a-philosophical-glitch-in-solution-to-brachistochrone-problem/attachment/5e5fddc63843b0499fecab35/AS%3A865409024671745%401583340998033/download/The+Brachistochrone+Problem+and+Modern+Control+Theory.pdf
+
+
