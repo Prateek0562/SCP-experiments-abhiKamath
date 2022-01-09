@@ -14,4 +14,4 @@
 
 ## Contents
 
- - [The Brachistochrone problem](https://nbviewer.org/github/abhikamath/scp-experiments/blob/bb1d724323113105dfa79eb17d270b36627cd29d/brachistochrone/ptr_scp.ipynb)
+ - [The Brachistochrone problem](https://nbviewer.org/github/abhikamath/scp-experiments/blob/b9b1389a3d46a7872aea1ecdfc446ee548d1d011/brachistochrone/ptr_scp.ipynb)
