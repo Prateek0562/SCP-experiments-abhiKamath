@@ -5,5 +5,5 @@ function zdot = dyn_func(~,z,thet,s)
     vx = z(3);
     vy = z(4);
     v = norm([vx;vy]);
-    zdot = [s*v*cos(thet);s*v*sin(thet);s*g*sin(thet)*cos(thet);s*g*sin(thet)*sin(thet)];
+    zdot = [s*v*cos(thet);s*v*sin(thet);2*s*g*cos(thet)*sin(thet);s*g-2*s*g*cos(thet)*cos(thet)];
 end

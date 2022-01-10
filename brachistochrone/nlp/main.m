@@ -13,11 +13,13 @@ Aeq(4,2*N) = 1;
 Aeq(5,2*N+1) = 1;
 Aeq(6,3*N+1) = 1;
 beq = [0;xT;0;yT;0;0];
-A = [];
-b = [];
+A = zeros(1,len_Z); A(end) = -1;
+b = 0;
 
-opts = optimoptions('fmincon','Algorithm','interior-point','Display','iter','MaxIterations',1e3,'MaxFunctionEvaluations',1e5,'UseParallel',true);
-Z = fmincon(@(Z) cost_func(Z),ones(len_Z,1),[],[],Aeq,beq,[],[],@(Z) constr_func(Z,@dyn_func),opts);
+% alg = 'interior-point';
+alg = 'sqp';
+opts = optimoptions('fmincon','Algorithm',alg,'Display','iter','MaxIterations',1e3,'MaxFunctionEvaluations',1e5,'UseParallel',true);
+Z = fmincon(@(Z) cost_func(Z),ones(len_Z,1),A,b,Aeq,beq,[],[],@(Z) constr_func(Z,@dyn_func),opts);
 
 z = [Z(1:N),Z(N+1:2*N),Z(2*N+1:3*N),Z(3*N+1:4*N)]';
 thet = Z(4*N+1:5*N)';

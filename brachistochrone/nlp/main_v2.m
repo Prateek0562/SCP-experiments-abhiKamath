@@ -17,10 +17,10 @@ beq = [0;xT;0;yT;0;0];
 A = [];
 b = [];
 
-% alg = 'interior-point';
-alg = 'sqp';
+alg = 'interior-point';
+% alg = 'sqp';
 opts = optimoptions('fmincon','Algorithm',alg,'Display','iter','MaxIterations',1e3,'MaxFunctionEvaluations',1e5,'UseParallel',true,'EnableFeasibilityMode',true);
-Z = fmincon(@(Z) cost_func(Z),ones(len_Z,1),[],[],Aeq,beq,[],[],@(Z) constr_func(Z,@dyn_func_v2),opts);
+Z = fmincon(@(Z) cost_func(Z),rand(len_Z,1),[],[],Aeq,beq,[],[],@(Z) constr_func(Z,@dyn_func_v2),opts);
 
 z = [Z(1:N),Z(N+1:2*N),Z(2*N+1:3*N),Z(3*N+1:4*N)]';
 u = [Z(4*N+1:5*N),Z(5*N+1:6*N)]';
@@ -46,19 +46,8 @@ function [c,ceq] = constr_func(Z,func)
     [~,~,~,zprop] = propagate_foh(tau,z,u,s,func,'Multiple');
     ceq = reshape(z(:,2:end) - zprop(:,2:end),[4*N-4,1]);
     for k = 1:N
-%         thet = atan(z(4,k)/z(3,k));
-%         ceq(end+1) = u(1,k)*sin(thet) - u(2,k)*cos(thet) - g*cos(thet);
-%         ceq(end+1) = u(1,k)*cos(thet) + u(2,k)*sin(thet);
-
-        ceq(end+1) = (u(1,k)*zprop(4,k) - u(2,k)*zprop(3,k) - g*zprop(3,k))*1;
-        ceq(end+1) = (u(1,k)*zprop(3,k) + u(2,k)*zprop(4,k))*1;
-
-%         thet = atan(z(4,k)/z(3,k));
-%         ceq(end+1) = u(1,k) - g*sin(thet)*cos(thet);
-%         ceq(end+1) = u(2,k) + g*cos(thet)*cos(thet);
+        ceq(end+1) = u(1,k)^2 + u(2,k)^2 - 2*g*u(2,k);
+        ceq(end+1) = u(1,k)*z(3,k) + u(2,k)*z(4,k);
     end
     c = [];
-    for k = 1:N
-        c(end+1) = norm(u(:,k)) - g;
-    end
 end
