@@ -1,14 +1,7 @@
-14/07/17
-Zhao's normalised dynamics is discretised pseudospectrally to yield the
-non-linear algebraic constraints.
+# 3-DoF aircraft dynamic soaring using Chebyshev pseudospectral method.
 
-The code seems to be performing better than its non-spectral 
-Hermite-Simpson counterpart.
-
-Need to investigate more.
-
-LOITER
-The code started to converge better ("convergence-run" observable) when the lower-bound on tfbar was invreased to 1.
-
-TRAVELLING
-Not a single converged trajectory was obtained. Prematurely stopping the optimization showed that trajectory looked "sensible" 
+ - Refer to [Zhao 2004](https://doi.org/10.1002/oca.739) for problem formulation. 
+ - Demonstrates usage of the CGL differentation matrix (computed in `cheb.m`) and the CGL interpolant (assembled in `cheb_interp.m`).
+ - Run `main.m` to compute trajectory.
+ - The differentiation matrix is used in `Cfun.m` to discretize the normalized continuous-time 3-DoF aircraft dynamics.
+ - The interpolant is used in `view_result.m` to interpolat the solution generated in `main.m` to a finer grid for plotting.
