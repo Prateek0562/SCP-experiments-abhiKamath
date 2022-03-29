@@ -5,3 +5,5 @@
  - Run `main.m` to compute trajectory.
  - The differentiation matrix is used in `Cfun.m` to discretize the normalized continuous-time 3-DoF aircraft dynamics.
  - The interpolant is used in `view_result.m` to interpolat the solution generated in `main.m` to a finer grid for plotting.
+
+![](/media/sample_traj.png)
