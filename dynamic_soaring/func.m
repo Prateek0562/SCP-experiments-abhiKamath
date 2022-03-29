@@ -4,7 +4,7 @@ function f = func(Z,const)
     rhbar = Z(end);
     x = zeros(N,6);
     for i = 1:6
-        x(:,i) = Z(N*(i-1)+1:N*i);        
+        x(:,i) = Z(N*(i-1)+1:N*i);
     end
     u = zeros(N,2);
     for i = 7:8
