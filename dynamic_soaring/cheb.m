@@ -1,5 +1,9 @@
 function [D,x] = cheb(N)
-% outputs the Chebyshev differentiation matrix and points
+%%% Lloyd N. Trefethen
+%%% source: https://people.maths.ox.ac.uk/trefethen/cheb.m
+%%%
+%%% outputs the Chebyshev differentiation matrix and points
+
 if N==0
     D = 0;
     x = 1;
